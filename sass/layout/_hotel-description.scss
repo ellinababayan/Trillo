@@ -1,0 +1,90 @@
+.paragraph:not(:last-of-type) {
+    margin-bottom: 2rem;
+}
+
+.list {
+    margin: 3rem 0;
+    list-style: none;
+    padding: 3rem 0;
+    border-top: .1rem solid $grey-light-2;
+    border-bottom: .1rem solid $grey-light-2;
+
+    display: flex;
+    flex-wrap: wrap;
+
+    &__item {
+        flex: 0 0 50%;
+        margin-bottom: .7rem;
+        font-size: 1.3rem;
+    }
+
+    &__item::before {
+        content: "";
+        display: inline-block;
+        height: 1rem;
+        width: 1rem;
+        margin-right: .7rem;
+
+        // older browsers
+        // background-image: url(/Trillo/img/SVG/chevron-small-right.svg);
+        // background-size: cover;
+
+        // newest browsers
+        @supports (mask-image: url()) or (-webkit-mask-image: url()) {
+            background-color: $primary;
+            -webkit-mask-image: url(/Trillo/img/SVG/chevron-small-right.svg);
+            mask-image: url(/Trillo/img/SVG/chevron-small-right.svg);
+            mask-size: cover;
+            background-image: none;
+        }
+    }
+
+}
+
+.recommend {
+    font-size: 1.3rem;
+    color: $grey-dark-3;
+    
+    display: flex;
+    align-items: center;
+
+    &__count {
+        margin-right: auto;   
+    }
+
+    &__friends {
+        display: flex;
+    }
+
+    &__photo {
+        box-sizing: content-box;
+        height: 3.5rem;
+        width: 3.5rem;
+        border-radius: 50%;
+        border: .3rem solid $white;
+
+        &:not(:last-child) {
+            margin-right: -1.15rem;
+
+            @media only screen and (max-width: 75em) {
+                margin-right: -1.5rem;
+            }
+
+            @media only screen and (max-width: 53.5em) {
+                margin-right: -2rem;
+            }
+
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
